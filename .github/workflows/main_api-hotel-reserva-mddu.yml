@@ -56,10 +56,9 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8C02F32BC31F42AEBB07EC369B9A90C2 }}
 
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'api-hotel-reserva-mddu'
-          slot-name: 'Production'
+          app-name: 'api-hotel-reserva-mddu' # El nombre real de tu App Service
+          publish-profile: ${{ secrets.AZURE_APP_SERVICE_PUBLISH_PROFILE }}
           package: .
           
